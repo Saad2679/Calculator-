@@ -1,0 +1,170 @@
+/* Base styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #232526, #414345); /* Dark gradient background */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+.calculator {
+    background: linear-gradient(145deg, #353535, #1c1c1c); /* Sleek gradient for calculator */
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 15px 15px 30px #0f0f0f, -15px -15px 30px #4a4a4a; /* Enhanced Neumorphism */
+    width: 400px;
+    text-align: center;
+    color: #fff;
+    animation: popUp 0.8s ease; /* Pop-up animation for calculator */
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.display {
+    background-color: #212121; /* Darker display */
+    color: #80ff80; /* Bright green text */
+    font-size: 3.2rem;
+    padding: 25px;
+    text-align: right;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: inset 2px 2px 5px #000000, inset -2px -2px 5px #333333;
+    height: 75px;
+    transition: background-color 0.4s ease; /* Smooth transition for display */
+}
+
+.display.active {
+    background-color: #292929;
+    color: #79ff4d; /* Color change when active */
+}
+
+.history {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    height: 50px;
+    overflow-y: auto;
+    display: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    background: linear-gradient(145deg, #3a3a3a, #1f1f1f); /* Sleek gradient */
+    color: #ffffff;
+    border: none;
+    padding: 20px;
+    font-size: 1.6rem;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #111111, -5px -5px 10px #444444;
+    transition: background 0.5s, transform 0.2s, box-shadow 0.5s; /* Transition for hover and click */
+    animation: fadeInUp 0.8s ease; /* Fade-in animation */
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn:hover {
+    background: linear-gradient(145deg, #4d4d4d, #2a2a2a); /* Change background on hover */
+    transform: scale(1.1); /* Slight zoom */
+    box-shadow: 7px 7px 14px #111111, -7px -7px 14px #555555; /* Enhanced shadow on hover */
+}
+
+.btn:active {
+    background: linear-gradient(145deg, #1e1e1e, #0b0b0b); /* Darker gradient when active */
+    transform: scale(0.95); /* Press effect */
+}
+
+.theme-toggle, .history-toggle {
+    margin-bottom: 15px;
+}
+
+#toggleHistory, #deleteHistory, #toggleTheme {
+    background-color: #1f6bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeIn 1.2s ease; /* Fade-in effect for buttons */
+}
+
+#toggleHistory:hover, #deleteHistory:hover, #toggleTheme:hover {
+    background-color: #1553cc;
+    transform: scale(1.05); /* Hover animation */
+}
+
+#deleteHistory {
+    background-color: #e74c3c;
+}
+
+#deleteHistory:hover {
+    background-color: #c0392b;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Additional animations */
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 10px #fff, 0 0 20px #79ff4d, 0 0 30px #79ff4d;
+    }
+    50% {
+        box-shadow: 0 0 20px #79ff4d, 0 0 40px #79ff4d, 0 0 50px #79ff4d;
+    }
+    100% {
+        box-shadow: 0 0 10px #fff, 0 0 20px #79ff4d, 0 0 30px #79ff4d;
+    }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+    .calculator {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 15px;
+        font-size: 1.3rem;
+    }
+
+    .display {
+        font-size: 2.5rem;
+        padding: 15px;
+        height: 60px;
+    }
+}

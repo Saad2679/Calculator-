@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="theme-toggle">
+            <button id="toggleTheme">Toggle Theme</button>
+        </div>
+        <div class="display" id="display"></div>
+        
+        <!-- Add the History Toggle Button -->
+        <div class="history-toggle">
+            <button id="toggleHistory">Show History</button>
+        </div>
+        
+        <!-- Add the Delete History Button (initially hidden) -->
+        <div class="history-toggle">
+            <button id="deleteHistory" style="display: none;">Delete History</button>
+        </div>
+        
+        <!-- History Section -->
+        <div class="history" id="history"></div>
+        
+        <div class="buttons">
+            <!-- Memory Buttons -->
+            <button class="btn" data-action="MC">MC</button>
+            <button class="btn" data-action="MR">MR</button>
+            <button class="btn" data-action="M+">M+</button>
+            <button class="btn" data-action="M-">M-</button>
+
+            <!-- Number and Operator Buttons -->
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn" data-value="/" data-action="operator">/</button>
+
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn" data-value="*" data-action="operator">*</button>
+
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn" data-value="-" data-action="operator">-</button>
+
+            <button class="btn" data-value="0">0</button>
+            <button class="btn" data-value=".">.</button>
+            <button class="btn" data-action="calculate">=</button>
+            <button class="btn" data-value="+" data-action="operator">+</button>
+
+            <!-- Scientific Function Buttons -->
+            <button class="btn" data-action="sqrt">√</button>
+            <button class="btn" data-action="square">x²</button>
+            <button class="btn" data-action="percent">%</button>
+            <button class="btn" data-action="clear">C</button>
+        </div>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+</html>
